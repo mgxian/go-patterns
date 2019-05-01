@@ -1,5 +1,14 @@
 package simple_factory
 
+// ProductType is used as a enum for product type
+type ProductType int
+
+// Names of products as enum
+const (
+	ProductA ProductType = iota
+	ProductB
+)
+
 // Product describes abstract product
 type Product interface {
 	show() string
@@ -26,10 +35,10 @@ type Factory struct {
 }
 
 // CreateProduct creates product
-func (f Factory) CreateProduct(arg string) Product {
-	if arg == "A" {
+func (f Factory) CreateProduct(t ProductType) Product {
+	if t == ProductA {
 		return ConcreteProductA{}
-	} else if arg == "B" {
+	} else if t == ProductB {
 		return ConcreteProductB{}
 	}
 	return nil

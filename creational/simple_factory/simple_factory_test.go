@@ -8,20 +8,20 @@ import (
 func TestCreateProductA(t *testing.T) {
 	var product Product
 	factory := Factory{}
-	product = factory.CreateProduct("A")
+	product = factory.CreateProduct(ProductA)
 	assert.Equal(t, product.show(), "ProductA")
 }
 
 func TestCreateProductB(t *testing.T) {
 	var product Product
 	factory := Factory{}
-	product = factory.CreateProduct("B")
+	product = factory.CreateProduct(ProductB)
 	assert.Equal(t, product.show(), "ProductB")
 }
 
 func TestCreateUnknownProduct(t *testing.T) {
 	var product Product
 	factory := Factory{}
-	product = factory.CreateProduct("Unkown")
+	product = factory.CreateProduct(ProductType(3))
 	assert.Nil(t, product)
 }
