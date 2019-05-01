@@ -1,19 +1,15 @@
 package prototype
 
+// Prototype describe prototype interface
 type Prototype interface {
-	Name() string
 	Clone() Prototype
 }
 
-type ConcretePrototypeA struct {
-	name string
+// ConcretePrototype implements prototype
+type ConcretePrototype struct {
 }
 
-func (p ConcretePrototypeA) Clone() Prototype {
-	n := p
-	return n
-}
-
-func (p ConcretePrototypeA) Name() string {
-	return p.name
+// Clone return the of copy of this struct
+func (p ConcretePrototype) Clone() Prototype {
+	return p
 }

@@ -3,13 +3,14 @@ package prototype
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"unsafe"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestPrototype(t *testing.T) {
 	var prototype Prototype
-	prototype = ConcretePrototypeA{name: "A"}
-	newPrototype := prototype.Clone()	
+	prototype = ConcretePrototype{}
+	newPrototype := prototype.Clone()
 	assert.NotEqual(t, unsafe.Pointer(&newPrototype), unsafe.Pointer(&prototype))
 }
