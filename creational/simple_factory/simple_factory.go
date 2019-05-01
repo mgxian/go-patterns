@@ -25,8 +25,8 @@ func (p ConcreteProductB) show() string {
 type Factory struct {
 }
 
-// GetProduct creates product
-func (f Factory) GetProduct(arg string) Product {
+// CreateProduct creates product
+func (f Factory) CreateProduct(arg string) Product {
 	if arg == "A" {
 		return ConcreteProductA{}
 	} else if arg == "B" {
