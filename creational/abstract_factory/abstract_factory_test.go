@@ -12,8 +12,8 @@ func TestCreateProductByFactory1(t *testing.T) {
 	factory = ConcreteFactory1{}
 	productA = factory.CreateProductA()
 	productB = factory.CreateProductB()
-	assert.Equal(t, productA.show(), "ProductA1")
-	assert.Equal(t, productB.show(), "ProductB1")
+	assert.Equal(t, "ProductA1", productA.show())
+	assert.Equal(t, "ProductB1", productB.show())
 }
 
 func TestCreateProductByFactory2(t *testing.T) {
@@ -23,6 +23,6 @@ func TestCreateProductByFactory2(t *testing.T) {
 	factory = ConcreteFactory2{}
 	productA = factory.CreateProductA()
 	productB = factory.CreateProductB()
-	assert.Equal(t, productA.show(), "ProductA2")
-	assert.Equal(t, productB.show(), "ProductB2")
+	assert.Equal(t, "ProductA2", productA.show())
+	assert.Equal(t, "ProductB2", productB.show())
 }

@@ -11,7 +11,7 @@ func TestRefinedAbstractionAWithConcreteImplementorA(t *testing.T) {
 	imp = concreteImplementorA{}
 	ra := newRefinedAbstractionA(imp)
 	result := ra.operation()
-	assert.Equal(t, result, "refinedAbstractionA concreteImplementorA")
+	assert.Equal(t, "refinedAbstractionA concreteImplementorA", result)
 }
 
 func TestRefinedAbstractionAWithConcreteImplementorB(t *testing.T) {
@@ -19,7 +19,7 @@ func TestRefinedAbstractionAWithConcreteImplementorB(t *testing.T) {
 	imp = concreteImplementorB{}
 	ra := newRefinedAbstractionA(imp)
 	result := ra.operation()
-	assert.Equal(t, result, "refinedAbstractionA concreteImplementorB")
+	assert.Equal(t, "refinedAbstractionA concreteImplementorB", result)
 }
 
 func TestRefinedAbstractionBWithConcreteImplementorA(t *testing.T) {
@@ -27,5 +27,5 @@ func TestRefinedAbstractionBWithConcreteImplementorA(t *testing.T) {
 	imp = concreteImplementorA{}
 	ra := newRefinedAbstractionB(imp)
 	result := ra.operation()
-	assert.Equal(t, result, "refinedAbstractionB concreteImplementorA")
+	assert.Equal(t, "refinedAbstractionB concreteImplementorA", result)
 }

@@ -5,12 +5,12 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func TestObserver(t *testing.T) {
 	var subject observable
 	subject = newSubject()
 	subject.attach(concreteObserverA{})
 	subject.attach(concreteObserverB{})
 	subject.attach(concreteObserverC{})
 
-	assert.Equal(t, subject.notify(), "concreteObserverA concreteObserverB concreteObserverC")
+	assert.Equal(t, "concreteObserverA concreteObserverB concreteObserverC", subject.notify())
 }

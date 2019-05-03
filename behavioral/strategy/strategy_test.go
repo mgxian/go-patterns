@@ -5,10 +5,10 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func TestStrategy(t *testing.T) {
 	ctx := newContext(concreteStrategyA{})
-	assert.Equal(t, ctx.algorithm(), "concreteStrategyA")
+	assert.Equal(t, "concreteStrategyA", ctx.algorithm())
 
 	ctx.setStrategy(concreteStrategyB{})
-	assert.Equal(t, ctx.algorithm(), "concreteStrategyB")
+	assert.Equal(t, "concreteStrategyB", ctx.algorithm())
 }

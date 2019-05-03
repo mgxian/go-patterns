@@ -9,5 +9,5 @@ import (
 func TestProxy(t *testing.T) {
 	proxy := newProxy()
 	result := proxy.request()
-	assert.Equal(t, result, "preRequest realRequest postRequest")
+	assert.Equal(t, "preRequest realRequest postRequest", result)
 }

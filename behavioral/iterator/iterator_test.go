@@ -15,18 +15,18 @@ func TestIterator(t *testing.T) {
 	aAggregate.add(3)
 	aAggregate.add("a")
 
-	assert.Equal(t, aIterator.currentItem(), 1)
-	assert.Equal(t, aIterator.hasNext(), true)
+	assert.Equal(t, 1, aIterator.currentItem())
+	assert.Equal(t, true, aIterator.hasNext())
 	aIterator.next()
 
-	assert.Equal(t, aIterator.currentItem(), 2)
-	assert.Equal(t, aIterator.hasNext(), true)
+	assert.Equal(t, 2, aIterator.currentItem())
+	assert.Equal(t, true, aIterator.hasNext())
 	aIterator.next()
 
-	assert.Equal(t, aIterator.currentItem(), 3)
-	assert.Equal(t, aIterator.hasNext(), true)
+	assert.Equal(t, 3, aIterator.currentItem())
+	assert.Equal(t, true, aIterator.hasNext())
 	aIterator.next()
 
-	assert.Equal(t, aIterator.currentItem(), "a")
-	assert.Equal(t, aIterator.hasNext(), false)
+	assert.Equal(t, "a", aIterator.currentItem())
+	assert.Equal(t, false, aIterator.hasNext())
 }

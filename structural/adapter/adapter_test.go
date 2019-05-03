@@ -13,5 +13,5 @@ func TestAdapter(t *testing.T) {
 	aAdaptee = newAdaptee()
 	aTarget = newAdapter(aAdaptee)
 	resp := aTarget.request()
-	assert.Equal(t, resp, "adapter response + raw response")
+	assert.Equal(t, "adapter response + raw response", resp)
 }

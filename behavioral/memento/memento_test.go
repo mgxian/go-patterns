@@ -5,17 +5,17 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func TestMemento(t *testing.T) {
 	aOriginator := newOriginator("A")
-	assert.Equal(t, aOriginator.getState(), "A")
+	assert.Equal(t, "A", aOriginator.getState())
 
 	aCaretaker := newCaretaker(aOriginator.createMemento())
 	aOriginator.setState("B")
 	aCaretaker.setMemento(aOriginator.createMemento())
 
 	aOriginator.setState("C")
-	assert.Equal(t, aOriginator.getState(), "C")
+	assert.Equal(t, "C", aOriginator.getState())
 
 	aOriginator.restoreMemento(aCaretaker.getMemento())
-	assert.Equal(t, aOriginator.getState(), "B")
+	assert.Equal(t, "B", aOriginator.getState())
 }

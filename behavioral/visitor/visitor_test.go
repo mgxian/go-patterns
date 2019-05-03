@@ -26,7 +26,7 @@ func TestVisitor(t *testing.T) {
 		"concreteVisitorA concreteElementB js operationB",
 		"concreteVisitorA concreteElementB ruby operationB",
 	}
-	assert.Equal(t, el.accept(v), expected)
+	assert.Equal(t, expected, el.accept(v))
 
 	v = concreteVisitorB{}
 	expected = []string{
@@ -37,5 +37,5 @@ func TestVisitor(t *testing.T) {
 		"concreteVisitorB concreteElementB js operationB",
 		"concreteVisitorB concreteElementB ruby operationB",
 	}
-	assert.Equal(t, el.accept(v), expected)
+	assert.Equal(t, expected, el.accept(v))
 }

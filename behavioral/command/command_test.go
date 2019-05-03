@@ -5,15 +5,15 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func TestCommand(t *testing.T) {
 	var cmd command
 	var aInvoker *invoker
 
 	cmd = newConcreteCommandA()
 	aInvoker = newInvoker(cmd)
-	assert.Equal(t, aInvoker.call(), "A")
+	assert.Equal(t, "A", aInvoker.call())
 
 	cmd = newConcreteCommandB()
 	aInvoker.setCommand(cmd)
-	assert.Equal(t, aInvoker.call(), "B")
+	assert.Equal(t, "B", aInvoker.call())
 }

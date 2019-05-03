@@ -12,11 +12,11 @@ func TestDecorator(t *testing.T) {
 	var aConcreteDecoratorB component
 
 	aConcreteComponent = concreteComponent{}
-	assert.Equal(t, aConcreteComponent.operation(), "concreteComponent")
+	assert.Equal(t, "concreteComponent", aConcreteComponent.operation())
 
 	aConcreteDecoratorA = newConcreteDecoratorA(aConcreteComponent)
-	assert.Equal(t, aConcreteDecoratorA.operation(), "addedBehavior concreteComponent")
+	assert.Equal(t, "addedBehavior concreteComponent", aConcreteDecoratorA.operation())
 
 	aConcreteDecoratorB = newConcreteDecoratorB(aConcreteDecoratorA)
-	assert.Equal(t, aConcreteDecoratorB.operation(), "addedState addedBehavior concreteComponent")
+	assert.Equal(t, "addedState addedBehavior concreteComponent", aConcreteDecoratorB.operation())
 }

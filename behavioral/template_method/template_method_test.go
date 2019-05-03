@@ -8,5 +8,5 @@ import (
 func TestTemplateMethod(t *testing.T) {
 	cc := newConcreteClass()
 	ac := newAbstractClass(cc)
-	assert.Equal(t, ac.templateMethod(), "operationA operationB operationC")
+	assert.Equal(t, "operationA operationB operationC", ac.templateMethod())
 }

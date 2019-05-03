@@ -18,5 +18,5 @@ func TestComposite(t *testing.T) {
 	root.add(aComposite)
 	root.add(newLeaf("C"))
 
-	assert.Equal(t, root.operation(), "BDEFC")
+	assert.Equal(t, "BDEFC", root.operation())
 }

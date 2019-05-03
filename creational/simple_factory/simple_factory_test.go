@@ -9,14 +9,14 @@ func TestCreateProductA(t *testing.T) {
 	var product Product
 	factory := Factory{}
 	product = factory.CreateProduct(ProductA)
-	assert.Equal(t, product.show(), "ProductA")
+	assert.Equal(t, "ProductA", product.show())
 }
 
 func TestCreateProductB(t *testing.T) {
 	var product Product
 	factory := Factory{}
 	product = factory.CreateProduct(ProductB)
-	assert.Equal(t, product.show(), "ProductB")
+	assert.Equal(t, "ProductB", product.show())
 }
 
 func TestCreateUnknownProduct(t *testing.T) {

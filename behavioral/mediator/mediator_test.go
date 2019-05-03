@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func TestMediator(t *testing.T) {
 	mediator := newConcreteMediator()
 	colleagueA := newConcreteColleagueA()
 	colleagueB := newConcreteColleagueB()
@@ -19,7 +19,7 @@ func Test(t *testing.T) {
 	mediator.colleagueB = colleagueB
 	mediator.colleagueC = colleagueC
 
-	assert.Equal(t, colleagueA.operation(), "colleagueB_methodB")
-	assert.Equal(t, colleagueB.operation(), "colleagueA_methodA colleagueC_methodC")
-	assert.Equal(t, colleagueC.operation(), "colleagueA_methodA")
+	assert.Equal(t, "colleagueB_methodB", colleagueA.operation())
+	assert.Equal(t, "colleagueA_methodA colleagueC_methodC", colleagueB.operation())
+	assert.Equal(t, "colleagueA_methodA", colleagueC.operation())
 }

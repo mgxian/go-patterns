@@ -11,5 +11,5 @@ func TestFacade(t *testing.T) {
 	aSubSystemB := subSystemB{}
 	aSubSystemC := subSystemC{}
 	aFacade := newFacade(aSubSystemA, aSubSystemB, aSubSystemC)
-	assert.Equal(t, aFacade.operation(), "ABC")
+	assert.Equal(t, "ABC", aFacade.operation())
 }

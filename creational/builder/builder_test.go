@@ -13,5 +13,5 @@ func TestBuildProduct(t *testing.T) {
 	aBuilder = newConcreteBuilder()
 	aDirector = newDirector(aBuilder)
 	product = aDirector.construct()
-	assert.Equal(t, product.getResult(), "ABC")
+	assert.Equal(t, "ABC", product.getResult())
 }

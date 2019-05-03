@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test(t *testing.T) {
+func TestChainOfResponsibility(t *testing.T) {
 	var handlerA1 handler
 	var handlerA2 handler
 	var handlerB1 handler
@@ -20,9 +20,9 @@ func Test(t *testing.T) {
 	handlerA2.setSuccessor(handlerB1)
 	handlerB1.setSuccessor(handlerB2)
 
-	assert.Equal(t, handlerA1.handleRequest(111), "handlerA 111 handle")
-	assert.Equal(t, handlerA1.handleRequest(113), "handlerB 113 handle")
-	assert.Equal(t, handlerA1.handleRequest(110), "handlerA 110 handle")
-	assert.Equal(t, handlerA1.handleRequest(112), "handlerB 112 handle")
-	assert.Equal(t, handlerA1.handleRequest(114), "no handler can handle this")
+	assert.Equal(t, "handlerA 111 handle", handlerA1.handleRequest(111))
+	assert.Equal(t, "handlerB 113 handle", handlerA1.handleRequest(113))
+	assert.Equal(t, "handlerA 110 handle", handlerA1.handleRequest(110))
+	assert.Equal(t, "handlerB 112 handle", handlerA1.handleRequest(112))
+	assert.Equal(t, "no handler can handle this", handlerA1.handleRequest(114))
 }
