@@ -1,7 +1,7 @@
 # go-patterns
 
 
-design patterns implement by go.
+design patterns in go world.
 
 ### creational patterns
 - singleton
